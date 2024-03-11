@@ -1,0 +1,1264 @@
+﻿<script src="script_code.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function showError(elementId, message) {
+            const element = document.getElementById(elementId);
+            element.innerText = message;
+            element.classList.add('error-active'); // Add the error-active class
+        }
+
+        document.getElementById("registerButton").addEventListener("click", function () {
+            // Clear previous error messages and input errors
+            document.querySelectorAll('.error-message').forEach(e => {
+                e.classList.remove('error-active');
+            });
+            document.querySelectorAll('.input-error').forEach(e => {
+                e.classList.remove('input-error');
+            });
+
+            let isValid = true;
+
+            // Name validation
+            const name = document.getElementById("name").value;
+            if (!name.trim()) {
+                showError("nameError", "Name is required");
+                document.getElementById("name").classList.add('input-error');
+                isValid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById("email").value;
+            if (!email.trim()) {
+                showError("emailError", "Email is required");
+                document.getElementById("email").classList.add('input-error');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError("emailError", "Invalid email format");
+                document.getElementById("email").classList.add('input-error');
+                isValid = false;
+            }
+
+            // Password validation
+            const password = document.getElementById("password").value;
+            if (password.length < 8) {
+                showError("passwordError", "Password must be at least 8 characters");
+                document.getElementById("password").classList.add('input-error');
+                isValid = false;
+            }
+
+            // Age validation
+            const age = document.getElementById("age").value;
+            if (!age.trim() || isNaN(age) || age < 18) {
+                showError("ageError", "Valid age (18 or older) is required");
+                document.getElementById("age").classList.add('input-error');
+                isValid = false;
+            }
+
+            // Gender validation
+            const gender = document.getElementById("gender").value.toLowerCase();
+            if (gender !== "male" && gender !== "female") {
+                showError("genderError", "Gender must be 'Male' or 'Female'");
+                document.getElementById("gender").classList.add('input-error');
+                isValid = false;
+            }
+
+            // Designation validation
+            const designation = document.getElementById("designation").value;
+            if (!designation.trim()) {
+                showError("designationError", "Designation is required");
+                document.getElementById("designation").classList.add('input-error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Submit form or do something
+                console.log("Form is valid");
+            }
+
+            if (isValid) {
+                // Ask for confirmation
+                if (confirm("Do you want to confirm your registration with the entered credentials?")) {
+                    // User clicked 'OK', proceed with registration
+                    // Create an object to hold the user registration data
+                    const registrationData = {
+                        Name: document.getElementById("name").value,
+                        Email: document.getElementById("email").value,
+                        Password: document.getElementById("password").value,
+                        Age: document.getElementById("age").value,
+                        Gender: document.getElementById("gender").value,
+                        Designation: document.getElementById("designation").value
+                    };
+
+                    // Serialize the registration data as a string
+                    const registrationString = Object.entries(registrationData)
+                        .map(([key, value]) => `${key}: ${value}`)
+                        .join('\n');
+
+                    // Save the data to the "registrations.txt" file
+                    saveToTextFile("registrations.txt", registrationString);
+
+                    // Display a success message
+                    alert("Successful registration");
+                } else {
+                    // User clicked 'Cancel', do nothing
+                    console.log("Registration cancelled by user");
+                }
+            }
+        });
+
+        function saveToTextFile(filename, data) {
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(String(email).toLowerCase());
+        }
+    });
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger = document.querySelector(".div-9");
+        var dropdownMenu = document.querySelector(".dropdown-menu");
+        var closeTimeout; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu.classList.add("show");
+        });
+
+        dropdownTrigger.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout = setTimeout(function () {
+                dropdownMenu.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu.addEventListener("mouseleave", function () {
+            dropdownMenu.classList.remove("show");
+        });
+    });
+
+    // Repeat the above code for other dropdowns (div-12 and div-15) as needed
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger12 = document.querySelector(".div-12");
+        var dropdownMenu12 = document.querySelector(".dropdown-tips");
+        var closeTimeout12; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger12.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu12.classList.add("show");
+        });
+
+        dropdownTrigger12.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout12 = setTimeout(function () {
+                dropdownMenu12.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu12.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout12); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu12.addEventListener("mouseleave", function () {
+            dropdownMenu12.classList.remove("show");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger15 = document.querySelector(".div-15");
+        var dropdownMenu15 = document.querySelector(".dropdown-recomendations");
+        var closeTimeout15; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger15.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu15.classList.add("show");
+        });
+
+        dropdownTrigger15.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout15 = setTimeout(function () {
+                dropdownMenu15.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu15.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout15); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu15.addEventListener("mouseleave", function () {
+            dropdownMenu15.classList.remove("show");
+        });
+    });
+
+</script>
+<body>
+    <div class="div">
+        <div class="div-2">
+            <div class="div-3">
+                <div class="div-4">
+                    <img loading="lazy"
+                         src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\logo.png"
+                         class="img" />
+                    <div class="div-5" id="logoButton">
+                        Sustainable
+                        <br />
+                        lifEstyle
+                        <br />
+                        assistANT
+                    </div>
+                </div>
+                <div class="div-6">
+                    <div class="div-7">
+                        <div class="div-8" id="featuresButton">Features</div>
+                        <div class="div-9">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-2" />
+                        </div>
+                    </div>
+                    <div class="div-10">
+                        <div class="div-11" id="tipsButton">Tips</div>
+                        <div class="div-12">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-3" />
+                        </div>
+                    </div>
+                    <div class="div-13">
+                        <div class="div-14" id="recommendationsButton">RecomendationS</div>
+                        <div class="div-15">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-4" />
+                        </div>
+                    </div>
+                    <div class="div-16" id="aboutusButton">ABOUT US</div>
+                    <div class="div-17" id="loginButton">LOGIN</div>
+                    <div class="div-18" id="signupButton">SIGN UP</div>
+
+                    <div class="div-101 dropdown-menu">
+                        <div class="div-111" id="cfp_button">Carbon Footprint Calculator</div>
+                        <div class="div-121" id="sg_button">Sustainable Shopping Guide</div>
+                        <div class="div-131" id="recipe_button">Eco-Friendly Recipes</div>
+                    </div>
+
+                    <div class="div-141 dropdown-tips">
+                        <div class="div-151" id="EC_button">Energy Conservation Tips</div>
+                        <div class="div-161" id="WR_button">Waste Reduction Tips</div>
+                        <div class="div-171" id="WC_button">Water Conservation Tips</div>
+                    </div>
+
+                    <div class="div-181 dropdown-recomendations">
+                        <div class="div-191" id="PR_button">Personalized Recomendations</div>
+                        <div class="div-201" id="reports_button">Progress Reports</div>
+                        <div class="div-211" id="ff_button">Feedback Form</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-19">
+            <img loading="lazy"
+                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/a25eb3097822d6d6388b300c4c2056c0116139751b4f7525237166521d7f315a?"
+                 class="img-5" />
+            <div class="div-20">
+                <div class="div-21">
+                    <div class="div-22">Create a New Account</div>
+                    <div class="div-23">
+                        Create a free account now to progress your sustainable journey
+                    </div>
+                    <div class="div-24">
+                        <div class="div-25">Name</div>
+                        <div class="div-26">*</div>
+                    </div>
+                    <div class="div-27">
+                        <input type="text" id="name" placeholder="Ali Raza">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="div-28">
+                        <div class="div-29">Email</div>
+                        <div class="div-30">*</div>
+                    </div>
+                    <div class="div-31">
+                        <input type="email" id="email" placeholder="xyz@gmail.com">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="div-32">
+                        <div class="div-33">Password</div>
+                        <div class="div-34">*</div>
+                    </div>
+                    <div class="div-35">
+                        <input type="password" id="password" placeholder="Minimum 8 characters">
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    <div class="div-36">
+                        <div class="div-37">Age</div>
+                        <div class="div-38">*</div>
+                    </div>
+                    <div class="div-39">
+                        <input type="text" id="age" placeholder="Age Format: 18">
+                        <span class="error-message" id="ageError"></span>
+                    </div>
+                    <div class="div-40">
+                        <div class="div-41">Gender</div>
+                        <div class="div-42">*</div>
+                    </div>
+                    <div class="div-43">
+                        <input type="text" id="gender" placeholder="Male/Female">
+                        <span class="error-message" id="genderError"></span>
+                    </div>
+                    <div class="div-44">*</div>
+                    <div class="div-45">Designation</div>
+                    <div class="div-46">
+                        <input type="text" id="designation" placeholder="Example: Software Engineer">
+                        <span class="error-message" id="designationError"></span>
+                    </div>
+                    <div class="div-47">
+                        <div class="div-48">*Required</div>
+                        <div class="div-49" id="registerButton">Register</div>
+                    </div>
+                </div>
+                <div class="div-50"></div>
+                <div class="div-51">
+                    <div class="div-52">Register Using</div>
+                    <div class="div-53">
+                        <img loading="lazy"
+                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/081a69caa1dfa6eda60df4158c6600adef69fbbbabf4e830bde9d6fe608864ec?"
+                             class="img-6" />
+                        <div class="div-54">Google</div>
+                        <img loading="lazy"
+                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/d71b43cb677166692bc9b607c567f76eba083584707b0c56eefb53c45d4a1d9e?"
+                             class="img-7" />
+                        <div class="div-55">Facebook</div>
+                        <img loading="lazy"
+                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46cce0e9dc23f323cf2596d14f745f3096f5883b34c14b5d9edb62b866e9b262?"
+                             class="img-8" />
+                        <div class="div-56">Twitter</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        display: block;
+        margin: 0px;
+    }
+
+    .div {
+        padding-bottom: 35px;
+        justify-content: center;
+        background-color: #c9e8a3;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div-2 {
+        background-color: #167f57;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+
+    @media (max-width: 991px) {
+        .div-2 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-3 {
+        justify-content: space-between;
+        background-color: #167f57;
+        display: flex;
+        gap: 20px;
+        margin: 0 29px 0 30px;
+        padding: 10px 0;
+    }
+
+    @media (max-width: 991px) {
+        .div-3 {
+            max-width: 100%;
+            margin-right: 10px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .div-4 {
+        border-radius: 6px;
+        background-color: #c9e8a3;
+        display: flex;
+        justify-content: space-between;
+        gap: 0px;
+        padding: 3px 19px 3px 0;
+    }
+
+    .img {
+        aspect-ratio: 1.38;
+        object-fit: contain;
+        object-position: center;
+        width: 77px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .div-5 {
+        color: #167f57;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        align-self: center;
+        margin: auto 0;
+        font: 700 10px Montserrat, sans-serif;
+    }
+
+    .div-6 {
+        align-self: start;
+        display: flex;
+        gap: 16px;
+        padding: 0 2px;
+    }
+
+    @media (max-width: 991px) {
+        .div-6 {
+            max-width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+
+    .div-7 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-8 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-8 {
+            white-space: initial;
+        }
+    }
+
+    .div-9 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-2 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-10 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-11 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-11 {
+            white-space: initial;
+        }
+    }
+
+    .div-12 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-3 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-13 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-14 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-14 {
+            white-space: initial;
+        }
+    }
+
+    .div-15 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-4 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-16 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-16 {
+            white-space: initial;
+        }
+    }
+
+    .div-17 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-17 {
+            white-space: initial;
+            padding: 0 20px;
+        }
+    }
+
+    .div-18 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-18 {
+            white-space: initial;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .div-19 {
+            max-width: 100%;
+        }
+    }
+
+    .div-20 {
+        gap: 20px;
+        display: flex;
+    }
+
+    .div-19 {
+        display: flex;
+        flex-direction: column;
+        fill: #fff;
+        overflow: hidden;
+        align-self: center;
+        position: relative;
+        display: flex;
+        min-height: 867px;
+        margin-top: 58px;
+        width: 100%;
+        max-width: 1054px;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 60px;
+    }
+
+    @media (max-width: 991px) {
+        .div-19 {
+            max-width: 100%;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+    }
+
+    .img-5 {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .div-20 {
+        position: relative;
+        display: flex;
+        width: 850px;
+        max-width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    @media (max-width: 991px) {
+        .div-20 {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .div-21 {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0%;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-21 {
+            max-width: 100%;
+        }
+    }
+
+    .div-22 {
+        color: #28472d;
+        align-self: stretch;
+        font: 400 28px/36px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-22 {
+            max-width: 100%;
+        }
+    }
+
+    .div-23 {
+        color: #6e6e6e;
+        white-space: nowrap;
+        border-radius: 10px;
+        background-color: #efefec;
+        align-self: stretch;
+        margin-top: 23px;
+        justify-content: center;
+        padding: 21px 23px;
+        font: 400 16px/26px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-23 {
+            max-width: 100%;
+            white-space: initial;
+            padding: 0 20px;
+        }
+    }
+
+    .div-24 {
+        align-self: start;
+        display: flex;
+        margin-top: 18px;
+        align-items: start;
+        gap: 10px;
+    }
+
+    .div-25 {
+        color: #000;
+        white-space: nowrap;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-25 {
+            white-space: initial;
+        }
+    }
+
+    .div-26 {
+        color: #c02b0a;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    .div-27 input, .div-31 input, .div-35 input, .div-39 input, .div-43 input, .div-46 input {
+        width: 80%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    .div-28 {
+        align-self: start;
+        display: flex;
+        margin-top: 18px;
+        align-items: start;
+        gap: 12px;
+    }
+
+    .div-29 {
+        color: #000;
+        white-space: nowrap;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-29 {
+            white-space: initial;
+        }
+    }
+
+    .div-30 {
+        color: #c02b0a;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    .div-32 {
+        align-self: start;
+        display: flex;
+        margin-top: 13px;
+        align-items: start;
+        gap: 7px;
+    }
+
+    .div-33 {
+        color: #000;
+        white-space: nowrap;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-33 {
+            white-space: initial;
+        }
+    }
+
+    .div-34 {
+        color: #c02b0a;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    .div-36 {
+        align-self: start;
+        display: flex;
+        margin-top: 29px;
+        align-items: start;
+        gap: 9px;
+    }
+
+    .div-37 {
+        color: #000;
+        margin-top: 4px;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    .div-38 {
+        color: #c02b0a;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    .div-40 {
+        align-self: start;
+        display: flex;
+        margin-top: 18px;
+        align-items: start;
+        gap: 9px;
+    }
+
+    .div-41 {
+        color: #000;
+        margin-top: 4px;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    .div-42 {
+        color: #c02b0a;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+
+
+    .div-44 {
+        color: #c02b0a;
+        margin: 21px 0 0 101px;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-44 {
+            margin-left: 10px;
+        }
+    }
+
+    .div-45 {
+        color: #000;
+        align-self: stretch;
+        white-space: nowrap;
+        font: 400 16px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-45 {
+            max-width: 100%;
+            white-space: initial;
+        }
+    }
+
+
+    .div-47 {
+        align-self: start;
+        display: flex;
+        width: 304px;
+        max-width: 100%;
+        flex-direction: column;
+        margin: 11px 0 0 16px;
+    }
+
+    @media (max-width: 991px) {
+        .div-47 {
+            margin-left: 10px;
+        }
+    }
+
+    .div-48 {
+        color: #c02b0a;
+        white-space: nowrap;
+        font: italic 400 16px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-48 {
+            white-space: initial;
+        }
+    }
+
+    .div-49 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #c9e8a3;
+        align-self: end;
+        padding: 20px 13px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-49 {
+            white-space: initial;
+        }
+    }
+
+    .div-50 {
+        background-color: #000;
+        align-self: start;
+        margin-top: 21px;
+        width: 2px;
+        height: 752px;
+    }
+
+    .div-51 {
+        align-self: start;
+        display: flex;
+        margin-top: 10px;
+        flex-basis: 0%;
+        flex-direction: column;
+    }
+
+    .div-52 {
+        color: #28472d;
+        white-space: nowrap;
+        font: 400 28px/36px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-52 {
+            white-space: initial;
+        }
+    }
+
+    .div-53 {
+        display: flex;
+        margin-top: 51px;
+        padding-left: 57px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-53 {
+            padding-left: 20px;
+            margin-top: 40px;
+        }
+    }
+
+    .img-6 {
+        aspect-ratio: 1.02;
+        object-fit: contain;
+        object-position: center;
+        width: 93px;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        align-self: start;
+        max-width: 100%;
+    }
+
+    .div-54 {
+        color: #28472d;
+        align-self: stretch;
+        margin-top: 39px;
+        font: 400 28px/36px DM Sans, sans-serif;
+    }
+
+    .img-7 {
+        aspect-ratio: 1.02;
+        object-fit: contain;
+        object-position: center;
+        width: 93px;
+        overflow: hidden;
+        align-self: start;
+        margin-top: 37px;
+        max-width: 100%;
+    }
+
+    .div-55 {
+        color: #28472d;
+        align-self: stretch;
+        margin-top: 39px;
+        font: 400 28px/36px DM Sans, sans-serif;
+    }
+
+    .img-8 {
+        aspect-ratio: 0.99;
+        object-fit: contain;
+        object-position: center;
+        width: 84px;
+        overflow: hidden;
+        align-self: start;
+        max-width: 100%;
+        margin: 52px 0 0 20px;
+    }
+
+    @media (max-width: 991px) {
+        .img-8 {
+            margin: 40px 0 0 10px;
+        }
+    }
+
+    .div-56 {
+        color: #28472d;
+        align-self: start;
+        white-space: nowrap;
+        margin: 38px 0 0 18px;
+        font: 400 28px/36px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-56 {
+            margin-left: 10px;
+            white-space: initial;
+        }
+    }
+
+    #registerButton {
+        cursor: pointer;
+    }
+
+    #logoButton, #loginButton, #signupButton, #aboutusButton, #featuresButton, #tipsButton, #recommendationsButton {
+        cursor: pointer;
+        /* Other styles for loginButton and signupButton */
+    }
+
+    .dropdown-content a {
+        cursor: pointer;
+        /* existing styles for dropdown-content a */
+    }
+
+    /* Add this style within the <style> tag in your HTML file */
+
+    /* Hover effect for dropdown features list items */
+    .div-8:hover,
+    .div-11:hover,
+    .div-14:hover {
+        background-color: #137547; /* Dark green color for hover effect */
+    }
+
+    /* Hover effect for buttons like ABOUT US, LOGIN, SIGN UP */
+    .div-16:hover,
+    .div-17:hover,
+    .div-18:hover {
+        background-color: #137547; /* Dark green color for hover effect */
+    }
+
+    /* Ensure to replace the #137547 with the actual dark green color you want to use */
+    /* Hover effect for menu items */
+    .div-8:hover, .div-11:hover, .div-14:hover {
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+    /* Hover effect for the 'About Us', 'Login', 'Sign Up' buttons */
+    .div-16:hover, .div-17:hover, .div-18:hover {
+        color: #90ee90; /* Light green color for text on hover */
+    }
+    /* Add styles for the dropdown menu and items */
+    .dropdown-menu {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-menu.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: -20px;
+            z-index: 10;
+        }
+
+        .dropdown-menu .div-111,
+        .dropdown-menu .div-121,
+        .dropdown-menu .div-131 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-tips {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-tips.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 140px;
+            z-index: 10;
+        }
+
+        .dropdown-tips .div-151,
+        .dropdown-tips .div-161,
+        .dropdown-tips .div-171 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-recomendations {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-recomendations.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 250px;
+            z-index: 10;
+        }
+
+        .dropdown-recomendations .div-191,
+        .dropdown-recomendations .div-201,
+        .dropdown-recomendations .div-211 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+
+    /* Adjustments to existing styles for better consistency */
+    .div-16,
+    .div-17,
+    .div-18 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        /* Add responsive styles here */
+    }
+
+    .error-message {
+        font-size: 0.85rem; /* Smaller font size for error text */
+        margin-top: 5px;
+        display: block; /* Ensures that the div takes up the full width available */
+        text-align: center; /* Centers the text within the div */
+        visibility: hidden; /* Hides the error message by default */
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear; /* Smooth transition for error visibility */
+    }
+
+    .error-active {
+        visibility: visible; /* Shows the error message when active */
+        opacity: 1;
+        color: #721c24; /* Dark red color for text */
+        background-color: #f8d7da; /* Light red background color */
+        border: 1px solid #f5c6cb; /* Light red border color */
+        padding: 0.75rem 1rem; /* Padding around the error message */
+        border-radius: 0.25rem; /* Rounded corners */
+        max-width: 80%; /* Max width of the error message box */
+        margin: 0.5rem auto 1rem; /* Center the box with automatic horizontal margins and a margin-top of 0.5rem */
+        box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.1); /* Subtle shadow for some depth */
+    }
+
+    /* Input field styles on error */
+    .input-error {
+        border: 1px solid #f5c6cb; /* Light red border color */
+    }
+    #cfp_button:hover, #sg_button:hover, #recipe_button:hover, #EC_button:hover, #WR_button:hover, #WC_button:hover, #PR_button:hover, #reports_button:hover, #ff_button:hover {
+        background-color: #137547;
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+</style>

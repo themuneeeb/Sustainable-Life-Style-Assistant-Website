@@ -1,0 +1,1603 @@
+﻿<script src="script_code.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger = document.querySelector(".div-9");
+        var dropdownMenu = document.querySelector(".dropdown-menu");
+        var closeTimeout; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu.classList.add("show");
+        });
+
+        dropdownTrigger.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout = setTimeout(function () {
+                dropdownMenu.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu.addEventListener("mouseleave", function () {
+            dropdownMenu.classList.remove("show");
+        });
+    });
+
+    // Repeat the above code for other dropdowns (div-12 and div-15) as needed
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger12 = document.querySelector(".div-12");
+        var dropdownMenu12 = document.querySelector(".dropdown-tips");
+        var closeTimeout12; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger12.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu12.classList.add("show");
+        });
+
+        dropdownTrigger12.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout12 = setTimeout(function () {
+                dropdownMenu12.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu12.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout12); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu12.addEventListener("mouseleave", function () {
+            dropdownMenu12.classList.remove("show");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger15 = document.querySelector(".div-15");
+        var dropdownMenu15 = document.querySelector(".dropdown-recomendations");
+        var closeTimeout15; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger15.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu15.classList.add("show");
+        });
+
+        dropdownTrigger15.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout15 = setTimeout(function () {
+                dropdownMenu15.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu15.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout15); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu15.addEventListener("mouseleave", function () {
+            dropdownMenu15.classList.remove("show");
+        });
+    });
+
+</script>
+<body>
+    <div class="div">
+        <div class="div-2">
+            <div class="div-3">
+                <div class="div-4">
+                    <img loading="lazy"
+                         src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\logo.png"
+                         class="img" />
+                    <div class="div-5" id="logoButton">
+                        Sustainable
+                        <br />
+                        lifEstyle
+                        <br />
+                        assistANT
+                    </div>
+                </div>
+                <div class="div-6">
+                    <div class="div-7">
+                        <div class="div-8" id="featuresButton">Features</div>
+                        <div class="div-9">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-2" />
+                        </div>
+                    </div>
+                    <div class="div-10">
+                        <div class="div-11" id="tipsButton">Tips</div>
+                        <div class="div-12">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-3" />
+                        </div>
+                    </div>
+                    <div class="div-13">
+                        <div class="div-14" id="recommendationsButton">RecomendationS</div>
+                        <div class="div-15">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-4" />
+                        </div>
+                    </div>
+                    <div class="div-16" id="aboutusButton">ABOUT US</div>
+                    <div class="div-17" id="loginButton">LOGIN</div>
+                    <div class="div-18" id="signupButton">SIGN UP</div>
+
+                    <div class="div-101 dropdown-menu">
+                        <div class="div-111" id="cfp_button">Carbon Footprint Calculator</div>
+                        <div class="div-121" id="sg_button">Sustainable Shopping Guide</div>
+                        <div class="div-131" id="recipe_button">Eco-Friendly Recipes</div>
+                    </div>
+
+                    <div class="div-141 dropdown-tips">
+                        <div class="div-151" id="EC_button">Energy Conservation Tips</div>
+                        <div class="div-161" id="WR_button">Waste Reduction Tips</div>
+                        <div class="div-171" id="WC_button">Water Conservation Tips</div>
+                    </div>
+
+                    <div class="div-181 dropdown-recomendations">
+                        <div class="div-191" id="PR_button">Personalized Recomendations</div>
+                        <div class="div-201" id="reports_button">Progress Reports</div>
+                        <div class="div-211" id="ff_button">Feedback Form</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-19">
+            <div class="div-20">
+                <div class="column">
+                    <div class="div-21">
+                        <div class="div-22">
+                            How many miles/kilometers do you drive per week?
+                        </div>
+                        <div class="div-f1">
+                            <input type="number" id="miles">
+                            <div id="milesError" class="error-message"></div>
+                        </div>
+                        <div class="div-24">
+                            What is your average fuel efficiency of Car ( km/l) ?
+                        </div>
+                        <div class="div-f2">
+                            <input type="number" id="fuelEfficiency">
+                            <div id="fuelError" class="error-message"></div>
+                        </div>
+                        <div class="div-26">
+                            What is your average monthly electricity usage in kWh?
+                        </div>
+                        <div class="div-f3">
+                            <input type="number" id="electricityUsage">
+                            <div id="electricityError" class="error-message"></div>
+                        </div>
+
+                        <div class="div-28">
+                            Average quantity of meat you consume in a week?
+                        </div>
+                        <div class="div-f4">
+                            <input type="number" id="meatConsumption">
+                            <div id="meatError" class="error-message"></div>
+                        </div>
+
+                        <div class="div-30">
+                            On a scale of 1 - 5 how much do you prioritize eco-friendly products?
+                        </div>
+                        <div class="div-f5">
+                            <input type="number" id="ecoPriority">
+                            <div id="priorityError" class="error-message"></div>
+                        </div>
+
+                        <div class="div-32">
+                            How much waste do you generate weekly/monthly?
+                        </div>
+                        <div class="div-f6">
+                            <input type="number" id="wasteGenerated">
+                            <div id="wasteError" class="error-message"></div>
+                        </div>
+                        <div class="div-34" id="calculateButton">Calculate</div>
+                    </div>
+                </div>
+                <div class="column-2">
+                    <div class="div-35">
+                        <div class="div-36">
+                            <div class="div-37">Sustainable lifestyle assistant</div>
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/d88d94a41307b40416f2d5e394523f4b729622a14fb615b61cb70ecc6794c37e?"
+                                 class="img-5" />
+                            <div class="div-38">features</div>
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/d88d94a41307b40416f2d5e394523f4b729622a14fb615b61cb70ecc6794c37e?"
+                                 class="img-6" />
+                            <div class="div-39">carbon footprint calculator</div>
+                        </div>
+                        <div class="div-40">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\cfp_bg1.png"
+                                 class="img-7" />
+                            <div class="div-41">
+                                🌍 Eco-Impact Explorer: Unveiling Your Carbon Footprint Journey 🌱
+                            </div>
+                            <div class="div-42">
+                                Explore your environmental impact with the Eco-Impact Explorer!
+                                Our advanced Carbon Footprint Calculator unveils insights into
+                                your lifestyle's influence on the planet. Make informed choices,
+                                embark on a sustainable adventure, and redefine your ecological
+                                legacy. Let's tread lightly and leave a positive mark on the
+                                world! 🌍✨
+                            </div>
+                            <div class="div-43">
+                                <div class="div-44">
+                                    <div class="column-3">
+                                        <img loading="lazy"
+                                             src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\cfp2.png"
+                                             class="img-8" />
+                                    </div>
+                                    <div class="column-4">
+                                        <img loading="lazy"
+                                             src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\cfp1.png"
+                                             class="img-9" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Start of Popup Message HTML -->
+    <div id="popupMessage" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Carbon Footprint Result</h2>
+            <p id="cfpResult">Your estimated carbon footprint is: </p>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+    <!-- End of Popup Message HTML -->
+    <!-- Confirmation Message Popup HTML -->
+    <div id="confirmationPopup" class="confirmation-overlay">
+        <div class="confirmation-content">
+            <span id="closeConfirmationPopup" class="close">&times;</span>
+            <h2>Are You Sure You Want To Calculate Carbon Footprint With The Entered Values?</h2>
+            <div class="confirmation-buttons">
+                <button id="confirmYes">YES</button>
+                <button id="confirmNo">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the confirmation popup
+        function showConfirmationPopup() {
+            document.getElementById('confirmationPopup').style.display = 'block';
+        }
+
+        // Function to hide the confirmation popup
+        function hideConfirmationPopup() {
+            document.getElementById('confirmationPopup').style.display = 'none';
+        }
+
+        //// Function to show the popup with the carbon footprint result
+        //function showPopup(result) {
+        //    document.getElementById('cfpResult').innerText = 'Your estimated carbon footprint is: ' + result.toFixed(2)+'Kg CO2';
+        //    document.getElementById('popupMessage').style.display = 'block';
+        //}
+
+        // Function to close the carbon footprint result popup
+        function closePopup() {
+            document.getElementById('popupMessage').style.display = 'none';
+        }
+
+        function validateInputs() {
+            let isValid = true;
+            const inputs = [
+                { id: 'miles', errorId: 'milesError' },
+                { id: 'fuelEfficiency', errorId: 'fuelError' },
+                { id: 'electricityUsage', errorId: 'electricityError' },
+                { id: 'meatConsumption', errorId: 'meatError' },
+                { id: 'ecoPriority', errorId: 'priorityError' },
+                { id: 'wasteGenerated', errorId: 'wasteError' }
+                // ... add other input IDs and their corresponding error message container IDs
+            ];
+
+            inputs.forEach(input => {
+                const inputValue = document.getElementById(input.id).value;
+                const errorDiv = document.getElementById(input.errorId);
+
+                if (!inputValue.trim()) {
+                    errorDiv.textContent = 'Field cannot be empty';
+                    errorDiv.style.display = 'block'; // Show the error message
+                    isValid = false;
+                } else if (parseFloat(inputValue) < 0) {
+                    errorDiv.textContent = 'Value cannot be negative';
+                    errorDiv.style.display = 'block'; // Show the error message
+                    isValid = false;
+                } else {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none'; // Hide the error message
+                }
+            });
+
+            return isValid;
+        }
+
+        function calculateCarbonFootprint() {
+            if (!validateInputs()) {
+                // Do not calculate if validation fails
+                return;
+            }
+            // Retrieve input values and parse them as floats
+            var miles = parseFloat(document.getElementById('miles').value);
+            var fuelEfficiency = parseFloat(document.getElementById('fuelEfficiency').value);
+            var electricityUsage = parseFloat(document.getElementById('electricityUsage').value);
+            var meatConsumption = parseFloat(document.getElementById('meatConsumption').value);
+            var ecoPriority = parseFloat(document.getElementById('ecoPriority').value);
+            var wasteGenerated = parseFloat(document.getElementById('wasteGenerated').value);
+
+            // Placeholder logic for carbon footprint calculation
+            // This should be replaced with actual logic based on environmental data
+            var carbonFootprint = (miles / fuelEfficiency) * 2.3; // Example calculation for vehicle emissions
+            carbonFootprint += (electricityUsage * 0.92); // Example for electricity usage emissions
+            carbonFootprint += (meatConsumption * 2.5); // Example for meat consumption impact
+            carbonFootprint += (5 - ecoPriority) * 1.2; // Example for eco-friendliness
+            carbonFootprint += (wasteGenerated * 1.7); // Example for waste generated impact
+
+            // Show the popup
+            document.getElementById('popupMessage').style.display = 'block';
+            // Update the result in the popup
+            document.getElementById('cfpResult').textContent = 'Your estimated carbon footprint is: ' + (carbonFootprint.toFixed(2)) + 'Kg CO₂';
+
+
+        }
+
+
+
+        // Event listener for the calculate button click to only show confirmation popup
+        document.getElementById('calculateButton').addEventListener('click', showConfirmationPopup);
+
+        // Event listener for the "YES" button in the confirmation popup
+        document.getElementById('confirmYes').addEventListener('click', function () {
+            hideConfirmationPopup();
+            calculateCarbonFootprint();
+        });
+
+        // Event listener for the "NO" button in the confirmation popup
+        document.getElementById('confirmNo').addEventListener('click', hideConfirmationPopup);
+
+        // Event listener for the close button in the confirmation popup
+        document.getElementById('closeConfirmationPopup').addEventListener('click', hideConfirmationPopup);
+
+        // Event listener for the close button in the carbon footprint result popup
+        document.getElementById('closePopup').addEventListener('click', closePopup);
+
+    </script>
+</body>
+<style>
+    body {
+        display: block;
+        margin: 0px;
+    }
+
+    .div {
+        padding-bottom: 35px;
+        justify-content: center;
+        background-image: url("cfp_bg.png");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        background-attachment: fixed;
+        width: 100%
+    }
+
+    .div-2 {
+        background-color: #167f57;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+
+    @media (max-width: 991px) {
+        .div-2 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-3 {
+        justify-content: space-between;
+        background-color: #167f57;
+        display: flex;
+        gap: 20px;
+        margin: 0 29px 0 30px;
+        padding: 10px 0;
+    }
+
+    @media (max-width: 991px) {
+        .div-3 {
+            max-width: 100%;
+            margin-right: 10px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .div-4 {
+        border-radius: 6px;
+        background-color: #c9e8a3;
+        display: flex;
+        justify-content: space-between;
+        gap: 0px;
+        padding: 3px 19px 3px 0;
+    }
+
+    .img {
+        aspect-ratio: 1.38;
+        object-fit: contain;
+        object-position: center;
+        width: 77px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .div-5 {
+        color: #167f57;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        align-self: center;
+        margin: auto 0;
+        font: 700 10px Montserrat, sans-serif;
+    }
+
+    .div-6 {
+        align-self: start;
+        display: flex;
+        gap: 16px;
+        padding: 0 2px;
+    }
+
+    @media (max-width: 991px) {
+        .div-6 {
+            max-width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+
+    .div-7 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+
+    .div-8 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-8 {
+            white-space: initial;
+        }
+    }
+
+    .div-9 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-2 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-10 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-11 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-11 {
+            white-space: initial;
+        }
+    }
+
+    .div-12 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-3 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-13 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-14 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-14 {
+            white-space: initial;
+        }
+    }
+
+    .div-15 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-4 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+
+    .div-16 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-16 {
+            white-space: initial;
+        }
+    }
+
+    .div-17 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-17 {
+            white-space: initial;
+            padding: 0 20px;
+        }
+    }
+
+    .div-18 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-18 {
+            white-space: initial;
+        }
+    }
+
+
+    .div-19 {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        width: 95%;
+        padding: 18px 21px 31px;
+    }
+
+    @media (max-width: 991px) {
+        .div-19 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-20 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @media (max-width: 991px) {
+        .div-20 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 38%;
+        margin-left: 0px;
+    }
+
+    @media (max-width: 991px) {
+        .column {
+            width: 100%;
+        }
+    }
+
+    .div-21 {
+        display: flex;
+        margin-top: 43px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-21 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-22 {
+        color: #4da472;
+        letter-spacing: 0.32px;
+        text-transform: capitalize;
+        align-self: start;
+        margin-left: 10px;
+        font: 800 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-22 {
+            max-width: 100%;
+        }
+    }
+
+    .div-23 {
+        border-radius: 800px;
+        background-color: #c9e8a3;
+        align-self: stretch;
+        display: flex;
+        margin-top: 20px;
+        height: 49px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-23 {
+            max-width: 100%;
+        }
+    }
+
+    .div-24 {
+        color: #4da472;
+        letter-spacing: 0.32px;
+        text-transform: capitalize;
+        align-self: stretch;
+        margin-top: 55px;
+        font: 800 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-24 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-25 {
+        border-radius: 800px;
+        background-color: #b0cd8d;
+        align-self: stretch;
+        display: flex;
+        margin-top: 16px;
+        height: 49px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-25 {
+            max-width: 100%;
+        }
+    }
+
+    .div-26 {
+        color: #4da472;
+        letter-spacing: 0.32px;
+        text-transform: capitalize;
+        align-self: stretch;
+        margin-top: 53px;
+        white-space: nowrap;
+        font: 800 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-26 {
+            max-width: 100%;
+            margin-top: 40px;
+            white-space: initial;
+        }
+    }
+
+    .div-27 {
+        border-radius: 800px;
+        background-color: #b0cd8d;
+        align-self: stretch;
+        display: flex;
+        margin-top: 15px;
+        height: 49px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-27 {
+            max-width: 100%;
+        }
+    }
+
+    .div-28 {
+        color: #4da472;
+        letter-spacing: 0.32px;
+        text-transform: capitalize;
+        align-self: stretch;
+        margin-top: 45px;
+        font: 800 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-28 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-29 {
+        border-radius: 800px;
+        background-color: #b0cd8d;
+        align-self: stretch;
+        display: flex;
+        margin-top: 10px;
+        height: 49px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-29 {
+            max-width: 100%;
+        }
+    }
+
+    .div-30 {
+        color: #4da472;
+        letter-spacing: 0.32px;
+        text-transform: capitalize;
+        align-self: stretch;
+        margin-top: 33px;
+        font: 800 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-30 {
+            max-width: 100%;
+        }
+    }
+
+    .div-31 {
+        border-radius: 800px;
+        background-color: #b0cd8d;
+        align-self: stretch;
+        display: flex;
+        margin-top: 8px;
+        height: 49px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-31 {
+            max-width: 100%;
+        }
+    }
+
+    .div-32 {
+        color: #4da472;
+        letter-spacing: 0.32px;
+        text-transform: capitalize;
+        align-self: stretch;
+        margin-top: 53px;
+        font: 800 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-32 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-33 {
+        border-radius: 800px;
+        background-color: #b0cd8d;
+        align-self: stretch;
+        display: flex;
+        margin-top: 19px;
+        height: 49px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+        .div-33 {
+            max-width: 100%;
+        }
+    }
+
+    .div-34 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #c9e8a3;
+        align-self: center;
+        margin-top: 46px;
+        padding: 20px 30px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-34 {
+            white-space: initial;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+    }
+
+    .column-2 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 60%;
+        margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+        .column-2 {
+            width: 100%;
+        }
+    }
+
+    .div-35 {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    @media (max-width: 991px) {
+        .div-35 {
+            max-width: 100%;
+            margin-top: 37px;
+        }
+    }
+
+    .div-36 {
+        align-items: center;
+        display: flex;
+        gap: 14px;
+    }
+
+    @media (max-width: 991px) {
+        .div-36 {
+            max-width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .div-37 {
+        color: #fff;
+        letter-spacing: 1.28px;
+        text-transform: capitalize;
+        align-self: stretch;
+        white-space: nowrap;
+        font: 600 16px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-37 {
+            white-space: initial;
+        }
+    }
+
+    .img-5 {
+        aspect-ratio: 0.5;
+        object-fit: contain;
+        object-position: center;
+        width: 6px;
+        stroke-width: 2px;
+        stroke: #fff;
+        overflow: hidden;
+        max-width: 100%;
+        margin: auto 0;
+    }
+
+    .div-38 {
+        color: #fff;
+        letter-spacing: 1.28px;
+        text-transform: capitalize;
+        align-self: stretch;
+        font: 600 16px Roboto, sans-serif;
+    }
+
+    .img-6 {
+        aspect-ratio: 0.5;
+        object-fit: contain;
+        object-position: center;
+        width: 6px;
+        stroke-width: 2px;
+        stroke: #fff;
+        overflow: hidden;
+        max-width: 100%;
+        margin: auto 0;
+    }
+
+    .div-39 {
+        color: #fff;
+        letter-spacing: 1.28px;
+        text-transform: capitalize;
+        align-self: stretch;
+        white-space: nowrap;
+        font: 600 16px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-39 {
+            white-space: initial;
+        }
+    }
+
+    .div-40 {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        align-self: stretch;
+        position: relative;
+        display: flex;
+        min-height: 705px;
+        margin-top: 46px;
+        width: 99%;
+        padding: 15px 0 0 10px;
+    }
+
+    @media (max-width: 991px) {
+        .div-40 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .img-7 {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .div-41 {
+        position: relative;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 0.8px;
+        text-transform: capitalize;
+        align-self: center;
+        max-width: 722px;
+        font: 700 40px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-41 {
+            max-width: 100%;
+        }
+    }
+
+    .div-42 {
+        position: relative;
+        color: #fff;
+        text-align: center;
+        align-self: center;
+        margin-top: 27px;
+        max-width: 758px;
+        font: italic 700 22px/40px DM Sans, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-42 {
+            max-width: 100%;
+        }
+    }
+
+    .div-43 {
+        position: relative;
+        z-index: 1;
+        margin: 17px 0 -10px;
+    }
+
+    @media (max-width: 991px) {
+        .div-43 {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    .div-44 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @media (max-width: 991px) {
+        .div-44 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column-3 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 60%;
+        margin-left: 0px;
+    }
+
+    @media (max-width: 991px) {
+        .column-3 {
+            width: 100%;
+        }
+    }
+
+    .img-8 {
+        aspect-ratio: 1.92;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    @media (max-width: 991px) {
+        .img-8 {
+            max-width: 100%;
+        }
+    }
+
+    .column-4 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 40%;
+        margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+        .column-4 {
+            width: 100%;
+        }
+    }
+
+    .img-9 {
+        aspect-ratio: 0.9;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        overflow: hidden;
+        z-index: 1;
+        margin-top: 19px;
+        flex-grow: 1;
+    }
+
+    #cfp_button:hover, #sg_button:hover, #recipe_button:hover, #EC_button:hover, #WR_button:hover, #WC_button:hover, #PR_button:hover, #reports_button:hover, #ff_button:hover {
+        background-color: #137547;
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+    #logoButton, #loginButton, #signupButton, #aboutusButton, #featuresButton, #tipsButton, #recommendationsButton {
+        cursor: pointer;
+        /* Other styles for loginButton and signupButton */
+    }
+    /* Add this style within the <style> tag in your HTML file */
+
+    /* Hover effect for dropdown features list items */
+    .div-8:hover,
+    .div-11:hover,
+    .div-14:hover {
+        background-color: #137547; /* Dark green color for hover effect */
+    }
+
+    /* Hover effect for buttons like ABOUT US, LOGIN, SIGN UP */
+    .div-16:hover,
+    .div-17:hover,
+    .div-18:hover {
+        background-color: #137547; /* Dark green color for hover effect */
+    }
+
+    /* Ensure to replace the #137547 with the actual dark green color you want to use */
+    /* Hover effect for menu items */
+    .div-8:hover, .div-11:hover, .div-14:hover {
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+    /* Hover effect for the 'About Us', 'Login', 'Sign Up' buttons */
+    .div-16:hover, .div-17:hover, .div-18:hover {
+        color: #90ee90; /* Light green color for text on hover */
+    }
+    /* Add styles for the dropdown menu and items */
+    .dropdown-menu {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-menu.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: -20px;
+            z-index: 10;
+        }
+
+        .dropdown-menu .div-111,
+        .dropdown-menu .div-121,
+        .dropdown-menu .div-131 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-tips {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-tips.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 140px;
+            z-index: 10;
+        }
+
+        .dropdown-tips .div-151,
+        .dropdown-tips .div-161,
+        .dropdown-tips .div-171 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-recomendations {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-recomendations.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 250px;
+            z-index: 10;
+        }
+
+        .dropdown-recomendations .div-191,
+        .dropdown-recomendations .div-201,
+        .dropdown-recomendations .div-211 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+
+    /* Adjustments to existing styles for better consistency */
+    .div-16,
+    .div-17,
+    .div-18 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        /* Add responsive styles here */
+    }
+
+
+    .div-f1 input, .div-f2 input, .div-f3 input, .div-f4 input, .div-f5 input, .div-f6 input {
+        display: inline-block;
+        border: 1px solid #B0CD8D;
+        border-radius: 800px;
+        border-block-color: #c9e8a3;
+        background-color: #c9e8a3;
+        align-self: stretch;
+        display: flex;
+        margin-top: 20px;
+        height: 49px;
+        flex-direction: column;
+        width: 95%;
+        padding: 10px;
+        color: #167F57;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 24px;
+    }
+
+    /* CSS styles for the calculate button */
+    #calculateButton {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        #calculateButton:hover {
+            background-color: #45a049;
+        }
+
+    /* Start of Popup Message CSS */
+    .popup-overlay {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .popup-content {
+        text-align: center;
+        border-radius: 30px;
+        background-color: #bbb;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid rgb(0, 0, 0);
+        width: 25%;
+        font-family: Arial, sans-serif; /* Use a modern font family */
+    }
+
+    /* Center the close button */
+    #closePopup {
+        display: block;
+        margin: 0 auto; /* Align the close button in the center */
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: Arial, sans-serif; /* Use a modern font family for the button */
+    }
+
+        #closePopup:hover {
+            background-color: #d73727; /* Darker red */
+        }
+    /* End of Popup Message CSS */
+
+
+    /* Confirmation Message Popup CSS */
+    .confirmation-overlay {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .confirmation-content {
+        position: relative;
+        background-color: #333;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 25px;
+        width: 35%;
+        text-align: center;
+        color: white;
+        font: icon;
+    }
+
+    .confirmation-buttons button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #confirmYes {
+        background-color: #4CAF50;
+    }
+
+    #confirmNo {
+        background-color: #f44336;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .close:hover {
+            color: #bbb;
+        }
+
+    /* Add styles for the dropdown menu and items */
+    .dropdown-menu {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-menu.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: -20px;
+            z-index: 10;
+        }
+
+        .dropdown-menu .div-111,
+        .dropdown-menu .div-121,
+        .dropdown-menu .div-131 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-tips {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-tips.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 140px;
+            z-index: 10;
+        }
+
+        .dropdown-tips .div-151,
+        .dropdown-tips .div-161,
+        .dropdown-tips .div-171 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-recomendations {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-recomendations.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 250px;
+            z-index: 10;
+        }
+
+        .dropdown-recomendations .div-191,
+        .dropdown-recomendations .div-201,
+        .dropdown-recomendations .div-211 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .div-9, .div-12, .div-15 {
+        cursor: pointer;
+    }
+
+    /*.error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+    }*/
+
+    /*.error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+        border: 1px solid red;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #ffe6e6;
+    }*/
+
+    .error-message {
+        display: none; /* Hide error messages initially */
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+        border: 1px solid red;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #ffe6e6;
+    }
+</style>

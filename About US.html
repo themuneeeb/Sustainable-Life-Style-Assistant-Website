@@ -1,0 +1,1058 @@
+﻿<script src="script_code.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger = document.querySelector(".div-9");
+        var dropdownMenu = document.querySelector(".dropdown-menu");
+        var closeTimeout; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu.classList.add("show");
+        });
+
+        dropdownTrigger.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout = setTimeout(function () {
+                dropdownMenu.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu.addEventListener("mouseleave", function () {
+            dropdownMenu.classList.remove("show");
+        });
+    });
+
+    // Repeat the above code for other dropdowns (div-12 and div-15) as needed
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger12 = document.querySelector(".div-12");
+        var dropdownMenu12 = document.querySelector(".dropdown-tips");
+        var closeTimeout12; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger12.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu12.classList.add("show");
+        });
+
+        dropdownTrigger12.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout12 = setTimeout(function () {
+                dropdownMenu12.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu12.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout12); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu12.addEventListener("mouseleave", function () {
+            dropdownMenu12.classList.remove("show");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdownTrigger15 = document.querySelector(".div-15");
+        var dropdownMenu15 = document.querySelector(".dropdown-recomendations");
+        var closeTimeout15; // Initialize a variable to store the timeout ID
+
+        dropdownTrigger15.addEventListener("mouseenter", function () {
+            // Toggle the 'show' class to display the dropdown menu
+            dropdownMenu15.classList.add("show");
+        });
+
+        dropdownTrigger15.addEventListener("mouseleave", function () {
+            // Set a timeout to close the dropdown menu after a brief delay
+            closeTimeout15 = setTimeout(function () {
+                dropdownMenu15.classList.remove("show");
+            }, 200); // Adjust the delay as needed (200 milliseconds in this example)
+        });
+
+        // Keep the dropdown menu open when hovering over it
+        dropdownMenu15.addEventListener("mouseenter", function () {
+            clearTimeout(closeTimeout15); // Clear the timeout to prevent menu from closing
+        });
+
+        // Close the dropdown menu if the user moves the mouse outside of it
+        dropdownMenu15.addEventListener("mouseleave", function () {
+            dropdownMenu15.classList.remove("show");
+        });
+    });</script>
+<body>
+    <div class="div">
+        <div class="div-2">
+            <div class="div-3">
+                <div class="div-4">
+                    <img loading="lazy"
+                         src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\logo.png"
+                         class="img" />
+                    <div class="div-5" id="logoButton">
+                        Sustainable
+                        <br />
+                        lifEstyle
+                        <br />
+                        assistANT
+                    </div>
+                </div>
+                <div class="div-6">
+                    <div class="div-7">
+                        <div class="div-8" id="featuresButton">Features</div>
+                        <div class="div-9">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-2" />
+                        </div>
+                    </div>
+                    <div class="div-10">
+                        <div class="div-11" id="tipsButton">Tips</div>
+                        <div class="div-12">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-3" />
+                        </div>
+                    </div>
+                    <div class="div-13">
+                        <div class="div-14" id="recommendationsButton">RecomendationS</div>
+                        <div class="div-15">
+                            <img loading="lazy"
+                                 src="C:\3rd Semester\HCI\PROJECT MATERIAL\HCI PROJECT MATERIAL\dropdown_arrow.png"
+                                 class="img-4" />
+                        </div>
+                    </div>
+                    <div class="div-16" id="aboutusButton">ABOUT US</div>
+                    <div class="div-17" id="loginButton">LOGIN</div>
+                    <div class="div-18" id="signupButton">SIGN UP</div>
+
+                    <div class="div-101 dropdown-menu">
+                        <div class="div-111" id="cfp_button">Carbon Footprint Calculator</div>
+                        <div class="div-121" id="sg_button">Sustainable Shopping Guide</div>
+                        <div class="div-131" id="recipe_button">Eco-Friendly Recipes</div>
+                    </div>
+
+                    <div class="div-141 dropdown-tips">
+                        <div class="div-151" id="EC_button">Energy Conservation Tips</div>
+                        <div class="div-161" id="WR_button">Waste Reduction Tips</div>
+                        <div class="div-171" id="WC_button">Water Conservation Tips</div>
+                    </div>
+
+                    <div class="div-181 dropdown-recomendations">
+                        <div class="div-191" id="PR_button">Personalized Recomendations</div>
+                        <div class="div-201" id="reports_button">Progress Reports</div>
+                        <div class="div-211" id="ff_button">Feedback Form</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-19">
+
+            <div class="div-20">
+                <div class="div-21">
+                    <div class="div-22">Sustainable lifestyle assistant</div>
+                    <img loading="lazy"
+                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/d88d94a41307b40416f2d5e394523f4b729622a14fb615b61cb70ecc6794c37e?"
+                         class="img-6" />
+                    <div class="div-23">About Us</div>
+                </div>
+                <div class="div-24">About us</div>
+            </div>
+            <div class="div-25">
+                <div class="div-26">Our Mission</div>
+                <div class="div-27">
+                    At Sustainable Lifestyle Assistant, we empower with eco-conscious
+                    choices for a greener life. Join us on the journey toward sustainable
+                    living! 🌱🌍
+                </div>
+                <div class="div-28">What Drives Us</div>
+                <div class="div-29">Passion for Sustainability</div>
+                <div class="div-30">
+                    Driven by a passion for sustainability, we're committed to making a
+                    positive impact. Join us in collective action for a healthier planet.
+                    🌍💚
+                </div>
+                <div class="div-31">Bringing knowledge and Action</div>
+                <div class="div-32">
+                    Simplify your journey to sustainability with our user-friendly platform.
+                    Bridge the gap between knowledge and action effortlessly. 🌿🌐
+                </div>
+                <div class="div-33">Glimpse of Features</div>
+                <div class="div-34">
+                    Embrace a greener life effortlessly! Calculate your carbon footprint,
+                    navigate eco-friendly shopping, explore planet-friendly recipes, and get
+                    personalized sustainability tips. Elevate your journey with our
+                    user-friendly features. 🌱🌍
+                </div>
+                <div class="div-35">Join Us on the Journey</div>
+                <div class="div-36">
+                    Join us on your sustainability journey, whether you're starting or
+                    seasoned. Together, let's shape a more sustainable future. Thank you for
+                    being part of our community! 🌿🌎
+                </div>
+                <div class="div-37"></div>
+                <div class="div-38">
+                    <div class="div-39">
+                        <div class="div-40">
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb3fbdd92bc1ee2c55f78fda1377541087a0e58f943226fdd5e5b774c7c86f9a?"
+                                 class="img-7" />
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/fdb4f176f8b8c06af3f1c82f92821601093d25995af89b1387f44e24357d3f4d?"
+                                 class="img-8" />
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b1a8adc63bc59642f2099694faad253fbfbda01a02708306a5a4c25ddf56b28f?"
+                                 class="img-9" />
+                        </div>
+                        <div class="div-41">
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/e17eb36ce78a5cee18d6dbd72ba1c65aeeedee812d02ecd8371d8390104c0075?"
+                                 class="img-10" />
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/d91cbc9673e1e27f4dca5e8a1c65b510f6211ca958595863ea0e8794c4c409ac?"
+                                 class="img-11" />
+                            <img loading="lazy"
+                                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/736f712c5e286fe05cac2d2a84b1fdb3f3f55524b936b9f6dffca8bb2a5e687b?"
+                                 class="img-12" />
+                        </div>
+                    </div>
+                    <div class="div-42">
+                        Muhammad Muneeb (Founder)
+                        <br />
+                        Muhammad Ahmad Wyne (CEO)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        display: block;
+        margin: 0px;
+    }
+
+    .div {
+        padding-bottom: 35px;
+        justify-content: center;
+        background-image: url("aboutus_bg.png");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%
+    }
+
+
+    .div-2 {
+        background-color: #167f57;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+
+    @media (max-width: 991px) {
+        .div-2 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-3 {
+        justify-content: space-between;
+        background-color: #167f57;
+        display: flex;
+        gap: 20px;
+        margin: 0 29px 0 30px;
+        padding: 10px 0;
+    }
+
+    @media (max-width: 991px) {
+        .div-3 {
+            max-width: 100%;
+            margin-right: 10px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .div-4 {
+        border-radius: 6px;
+        background-color: #c9e8a3;
+        display: flex;
+        justify-content: space-between;
+        gap: 0px;
+        padding: 3px 19px 3px 0;
+    }
+
+    .img {
+        aspect-ratio: 1.38;
+        object-fit: contain;
+        object-position: center;
+        width: 77px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .div-5 {
+        color: #167f57;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        align-self: center;
+        margin: auto 0;
+        font: 700 10px Montserrat, sans-serif;
+    }
+
+    .div-6 {
+        align-self: start;
+        display: flex;
+        gap: 16px;
+        padding: 0 2px;
+    }
+
+    @media (max-width: 991px) {
+        .div-6 {
+            max-width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+
+    .div-7 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-8 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-8 {
+            white-space: initial;
+        }
+    }
+
+    .div-9 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-2 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-10 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-11 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-11 {
+            white-space: initial;
+        }
+    }
+
+    .div-12 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-3 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-13 {
+        border-radius: 80px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+    }
+
+    .div-14 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 0px 0px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 19.5px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-14 {
+            white-space: initial;
+        }
+    }
+
+    .div-15 {
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 8px 8px 0px;
+        background-color: #c9e8a3;
+        align-self: center;
+        display: flex;
+        aspect-ratio: 0.48333333333333334;
+        flex-direction: column;
+        padding: 9px 5px;
+        height: 40px;
+    }
+
+    .img-4 {
+        aspect-ratio: 1.33;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        fill: #167f57;
+        overflow: hidden;
+    }
+
+    .div-16 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-16 {
+            white-space: initial;
+        }
+    }
+
+    .div-17 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-17 {
+            white-space: initial;
+            padding: 0 20px;
+        }
+    }
+
+    .div-18 {
+        color: #167f57;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        justify-content: center;
+        align-self: center;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #c9e8a3;
+        flex-grow: 1;
+        padding: 20px 10px;
+        font: 700 16px Montserrat, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-18 {
+            white-space: initial;
+        }
+    }
+
+    }
+
+    .div-19 {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        min-height: 935px;
+        width: 100%;
+        align-items: end;
+        padding: 22px 29px 22px 80px;
+    }
+
+    @media (max-width: 991px) {
+        .div-19 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .img-5 {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .div-20 {
+        position: relative;
+        display: flex;
+        width: 791px;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .div-21 {
+        align-items: center;
+        display: flex;
+        gap: 14px;
+        margin: 10px -650px 0px 90px
+    }
+
+    @media (max-width: 991px) {
+        .div-21 {
+            justify-content: center;
+        }
+    }
+
+    .div-22 {
+        color: #fff;
+        letter-spacing: 1.28px;
+        text-transform: capitalize;
+        align-self: stretch;
+        white-space: nowrap;
+        font: 600 16px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-22 {
+            white-space: initial;
+        }
+    }
+
+    .img-6 {
+        aspect-ratio: 0.5;
+        object-fit: contain;
+        object-position: center;
+        width: 6px;
+        stroke-width: 2px;
+        stroke: #fff;
+        overflow: hidden;
+        max-width: 100%;
+        margin: auto 0;
+    }
+
+    .div-23 {
+        color: #fff;
+        letter-spacing: 1.28px;
+        text-transform: capitalize;
+        align-self: stretch;
+        white-space: nowrap;
+        font: 600 16px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-23 {
+            white-space: initial;
+        }
+    }
+
+    .div-24 {
+        color: #fff;
+        margin-top: 12px;
+        font: 700 64px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-24 {
+            max-width: 100%;
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+
+    .div-25 {
+        position: relative;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0 0 23px;
+    }
+
+    @media (max-width: 991px) {
+        .div-25 {
+            max-width: 100%;
+        }
+    }
+
+    .div-26 {
+        color: #fff;
+        align-self: stretch;
+        font: 700 40px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-26 {
+            max-width: 100%;
+        }
+    }
+
+    .div-27 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 21px;
+        font: 400 24px/30px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-27 {
+            max-width: 100%;
+        }
+    }
+
+    .div-28 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 21px;
+        font: 700 40px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-28 {
+            max-width: 100%;
+        }
+    }
+
+    .div-29 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 37px;
+        white-space: nowrap;
+        font: 700 32px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-29 {
+            max-width: 100%;
+            white-space: initial;
+        }
+    }
+
+    .div-30 {
+        color: #fff;
+        align-self: stretch;
+        font: 400 24px/30px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-30 {
+            max-width: 100%;
+        }
+    }
+
+    .div-31 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 30px;
+        white-space: nowrap;
+        font: 700 32px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-31 {
+            max-width: 100%;
+            white-space: initial;
+        }
+    }
+
+    .div-32 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 7px;
+        font: 400 24px/30px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-32 {
+            max-width: 100%;
+        }
+    }
+
+    .div-33 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 33px;
+        font: 700 40px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-33 {
+            max-width: 100%;
+        }
+    }
+
+    .div-34 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 12px;
+        font: 400 24px/30px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-34 {
+            max-width: 100%;
+        }
+    }
+
+    .div-35 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 39px;
+        font: 700 40px/73px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-35 {
+            max-width: 100%;
+        }
+    }
+
+    .div-36 {
+        color: #fff;
+        align-self: stretch;
+        margin-top: 9px;
+        font: 400 24px/30px DM Sans, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-36 {
+            max-width: 100%;
+        }
+    }
+
+    .div-37 {
+        background-color: #fff;
+        align-self: stretch;
+        margin-top: 31px;
+        height: 1px;
+    }
+
+    @media (max-width: 991px) {
+        .div-37 {
+            max-width: 100%;
+        }
+    }
+
+    .div-38 {
+        align-self: end;
+        display: flex;
+        gap: 16px;
+        margin: 20px 116px 0 0;
+    }
+
+    @media (max-width: 991px) {
+        .div-38 {
+            margin-right: 10px;
+        }
+    }
+
+    .div-39 {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0%;
+        flex-direction: column;
+    }
+
+    .div-40 {
+        display: flex;
+        justify-content: space-between;
+        gap: 11px;
+    }
+
+    @media (max-width: 991px) {
+        .div-40 {
+            justify-content: center;
+        }
+    }
+
+    .img-7 {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 32px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .img-8 {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 32px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .img-9 {
+        aspect-ratio: 1.22;
+        object-fit: contain;
+        object-position: center;
+        width: 39px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .div-41 {
+        display: flex;
+        margin-top: 8px;
+        justify-content: space-between;
+        gap: 11px;
+    }
+
+    @media (max-width: 991px) {
+        .div-41 {
+            justify-content: center;
+        }
+    }
+
+    .img-10 {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 32px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .img-11 {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 32px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .img-12 {
+        aspect-ratio: 1.22;
+        object-fit: contain;
+        object-position: center;
+        width: 39px;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .div-42 {
+        color: #fff;
+        align-self: center;
+        margin: auto 0;
+        font: 400 16px/34px DM Sans, sans-serif;
+    }
+
+    #cfp_button:hover, #sg_button:hover, #recipe_button:hover, #EC_button:hover, #WR_button:hover, #WC_button:hover, #PR_button:hover, #reports_button:hover, #ff_button:hover {
+        background-color: #137547;
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+    #loginButton, #signupButton {
+        cursor: pointer;
+        /* Other styles for loginButton and signupButton */
+    }
+
+    #logoButton, #loginButton, #signupButton, #aboutusButton, #featuresButton, #tipsButton, #recommendationsButton {
+        cursor: pointer;
+        /* Other styles for loginButton and signupButton */
+    }
+
+    .dropdown-content a {
+        cursor: pointer;
+        /* existing styles for dropdown-content a */
+    }
+
+    /* Add this style within the <style> tag in your HTML file */
+
+    /* Hover effect for dropdown features list items */
+    .div-8:hover,
+    .div-11:hover,
+    .div-14:hover {
+        background-color: #137547; /* Dark green color for hover effect */
+    }
+
+    /* Hover effect for buttons like ABOUT US, LOGIN, SIGN UP */
+    .div-16:hover,
+    .div-17:hover,
+    .div-18:hover {
+        background-color: #137547; /* Dark green color for hover effect */
+    }
+
+    /* Ensure to replace the #137547 with the actual dark green color you want to use */
+    /* Hover effect for menu items */
+    .div-8:hover, .div-11:hover, .div-14:hover {
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+    /* Hover effect for the 'About Us', 'Login', 'Sign Up' buttons */
+    .div-16:hover, .div-17:hover, .div-18:hover {
+        color: #90ee90; /* Light green color for text on hover */
+    }
+
+    /* Add styles for the dropdown menu and items */
+    .dropdown-menu {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-menu.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: -20px;
+            z-index: 10;
+        }
+
+        .dropdown-menu .div-111,
+        .dropdown-menu .div-121,
+        .dropdown-menu .div-131 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-tips {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-tips.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 140px;
+            z-index: 10;
+        }
+
+        .dropdown-tips .div-151,
+        .dropdown-tips .div-161,
+        .dropdown-tips .div-171 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+    .dropdown-recomendations {
+        display: none;
+        background-color: #c9e8a3;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+        .dropdown-recomendations.show {
+            display: block;
+            position: absolute;
+            background: #ffffff;
+            margin-top: 65px;
+            margin-left: 250px;
+            z-index: 10;
+        }
+
+        .dropdown-recomendations .div-191,
+        .dropdown-recomendations .div-201,
+        .dropdown-recomendations .div-211 {
+            color: #167f57;
+            letter-spacing: 0.32px;
+            text-transform: capitalize;
+            padding: 10px 13px;
+            font: 800 16px Montserrat, sans-serif;
+            cursor: pointer;
+            background: #c9e8a3;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+</style>
